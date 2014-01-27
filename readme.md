@@ -8,7 +8,7 @@
 
 ##how to require
 1. run `spm install crossjs/locker`
-1. write `require('crossjs/locker/_VERSION.NUMBER_/locker')`
+1. write `require('crossjs/locker/VERSION.NUMBER/locker')`
 
 ##how to build
 1. checkout
