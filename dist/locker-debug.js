@@ -1,10 +1,10 @@
-define("crossjs/locker/0.0.1/locker-debug", [ "crossjs/util/0.0.1/util-debug", "crossjs/class/0.0.2/class-debug", "$-debug", "crossjs/class/0.0.2/super-debug" ], function(require, exports, module) {
+define("crossjs/locker/0.0.1/locker-debug", [ "crossjs/util/0.0.1/util-debug", "crossjs/class/0.0.3/class-debug", "$-debug", "crossjs/class/0.0.3/super-debug" ], function(require, exports, module) {
     /**
  * 对象储物柜
  * @module Locker
  */
     "use strict";
-    var Util = require("crossjs/util/0.0.1/util-debug"), Class = require("crossjs/class/0.0.2/class-debug");
+    var Util = require("crossjs/util/0.0.1/util-debug"), Class = require("crossjs/class/0.0.3/class-debug");
     /**
  * 对象存取储物柜
  * @class Locker
