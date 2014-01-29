@@ -7,10 +7,12 @@
  > seajs module
 
 ##how to require
+
 1. run `spm install crossjs/locker`
 1. write `require('crossjs/locker/VERSION.NUMBER/locker')`
 
 ##how to build
+
 1. checkout
 1. `npm install --save-dev`
 1. `spm install --save`
@@ -18,4 +20,5 @@
 
 ##history
 
+- 0.0.2 - remove depedency `util` and `jquery`
 - 0.0.1 - init

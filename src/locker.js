@@ -7,27 +7,18 @@ define(function (require, exports, module) {
 
 'use strict';
 
-var $ = require('$'),
-  Util = require('util'),
-  Class = require('class');
+var prefix = 'CROSSJS-LOCKER';
 
 /**
  * 对象存取储物柜
  * @class Locker
  * @constructor
  */
-var Locker = new Class({
+var Locker = function () {
+  this.stacks = {};
+};
 
-  /**
-   * 构造函数
-   * @param {string} [pre] key前缀
-   * @param {object} [stk] 柜组
-   * @method __construct
-   */
-  __construct: function (pre, stk) {
-    this.prefix = pre || Util.nuid();
-    this.stacks = stk || {};
-  },
+Locker.prototype = {
 
   /**
    * 从储物柜中取得指定对象，参数key未指定则返回全部
@@ -36,7 +27,7 @@ var Locker = new Class({
    */
   get: function (key) {
     if (typeof key !== 'undefined') {
-      key = this.prefix + key;
+      key = prefix + key;
       if (this.stacks.hasOwnProperty(key)) {
         return this.stacks[key];
       }
@@ -52,7 +43,7 @@ var Locker = new Class({
    * @method set
    */
   set: function (key, obj) {
-    this.stacks[this.prefix + key] = obj;
+    this.stacks[prefix + key] = obj;
   },
 
   /**
@@ -62,7 +53,7 @@ var Locker = new Class({
    */
   remove: function (key) {
     if (key !== '') {
-      delete this.stacks[this.prefix + key];
+      delete this.stacks[prefix + key];
     }
   },
 
@@ -71,14 +62,10 @@ var Locker = new Class({
    * @method empty
    */
   empty: function () {
-    $.each(this.stacks, $.proxy(function (key, obj) {
-      if (key.indexOf(this.prefix) === 0) {
-        delete this.stacks[key];
-      }
-    }, this));
+    this.stacks = {};
   }
 
-});
+};
 
 return Locker;
 

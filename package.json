@@ -1,6 +1,6 @@
 {
   "name": "locker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "locker for objects",
   "keywords": [ "locker", "seajs", "modules" ],
   "homepage": "https://github.com/crossjs/locker",
@@ -45,10 +45,6 @@
   "family": "crossjs",
   "spm": {
     "output": [ "locker.js" ],
-    "alias": {
-      "$": "$",
-      "util": "crossjs/util/0.0.1/util",
-      "class": "crossjs/class/0.0.3/class"
-    }
+    "alias": { }
   }
 }
