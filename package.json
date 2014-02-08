@@ -1,6 +1,6 @@
 {
   "name": "locker",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "locker for objects",
   "keywords": [ "locker", "seajs", "modules" ],
   "homepage": "https://github.com/crossjs/locker",

@@ -1,2 +1,2 @@
-/*! locker-0.0.2 2014-01-29 21:24:11 */
-define("crossjs/locker/0.0.2/locker",[],function(){"use strict";var a="CROSSJS-LOCKER",b=function(){this.stacks={}};return b.prototype={get:function(b){return"undefined"!=typeof b?(b=a+b,this.stacks.hasOwnProperty(b)?this.stacks[b]:null):this.stacks},set:function(b,c){this.stacks[a+b]=c},remove:function(b){""!==b&&delete this.stacks[a+b]},empty:function(){this.stacks={}}},b});
+/*! locker-0.1.0 2014-02-08 16:08:44 */
+define("crossjs/locker/0.1.0/locker",[],function(){"use strict";var a="CROSSJS-LOCKER",b=function(){this.stacks={}};return b.prototype={get:function(b){return"undefined"!=typeof b?(b=a+b,this.stacks.hasOwnProperty(b)?this.stacks[b]:null):this.stacks},set:function(b,c){this.stacks[a+b]=c},remove:function(b){""!==b&&delete this.stacks[a+b]},empty:function(){this.stacks={}}},b});

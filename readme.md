@@ -20,5 +20,6 @@
 
 ##history
 
+- 0.1.0 - 删除`jQuery`，专注于支持`zepto`
 - 0.0.2 - remove depedency `util` and `jquery`
 - 0.0.1 - init

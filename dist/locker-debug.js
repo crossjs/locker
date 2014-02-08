@@ -1,4 +1,4 @@
-define("crossjs/locker/0.0.2/locker-debug", [], function(require, exports, module) {
+define("crossjs/locker/0.1.0/locker-debug", [], function(require, exports, module) {
     /**
  * 对象储物柜
  * @module Locker
