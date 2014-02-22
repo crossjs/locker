@@ -20,6 +20,6 @@
 
 ##history
 
-- 0.1.0 - remove `jQuery`, supports`zepto`
+- 0.1.0 - upgrade `jQuery` to 2.1.0
 - 0.0.2 - remove depedency `util` and `jquery`
 - 0.0.1 - init
