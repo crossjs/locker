@@ -1,25 +1,26 @@
 #locker
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/crossjs/locker/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-[![Build Status](https://api.travis-ci.org/crossjs/locker.png?branch=master)](http://travis-ci.org/crossjs/locker)
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![Build Status](https://api.travis-ci.org/pandorajs/locker.png?branch=master)](http://travis-ci.org/pandorajs/locker)
+[![Coverage Status](https://coveralls.io/repos/pandorajs/locker/badge.png?branch=master)](https://coveralls.io/r/pandorajs/locker?branch=master)
 
- > seajs module
+ > locker, seajs module
 
-##how to require
-
-1. run `spm install crossjs/locker`
-1. write `require('crossjs/locker/VERSION.NUMBER/locker')`
-
-##how to build
+##how to demo
 
 1. checkout
-1. `npm install --save-dev`
-1. `spm install --save`
-1. `grunt`
+1. run `npm install`
+1. run `grunt`
+1. view files in `/demo`
+
+##how to use
+
+1. run `spm install pandora/locker`
+1. write `require('pandora/locker/VERSION.NUMBER/locker')`
+
+##find examples
+
+1. view the source files in '/src'
 
 ##history
 
-- 0.1.0 - upgrade `jQuery` to 2.1.0
-- 0.0.2 - remove depedency `util` and `jquery`
-- 0.0.1 - init
+- 1.0.0 - release

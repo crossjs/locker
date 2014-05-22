@@ -1,16 +1,16 @@
 define(function (require, exports, module) {
 
 /**
- * 对象储物柜
+ * 储物柜
  * @module Locker
  */
 
 'use strict';
 
-var prefix = 'CROSSJS-LOCKER';
+var prefix = 'LKR-';
 
 /**
- * 对象存取储物柜
+ * 储物柜
  * @class Locker
  * @constructor
  */
