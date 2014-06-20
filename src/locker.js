@@ -15,7 +15,7 @@ var prefix = 'LKR-';
  * @constructor
  */
 var Locker = function () {
-  this.stacks = {};
+  this.empty();
 };
 
 Locker.prototype = {
@@ -44,6 +44,10 @@ Locker.prototype = {
    */
   set: function (key, obj) {
     this.stacks[prefix + key] = obj;
+
+    if (this.keys.indexOf(key) === -1) {
+      this.keys.push(key);
+    }
   },
 
   /**
@@ -54,6 +58,8 @@ Locker.prototype = {
   remove: function (key) {
     if (key !== '') {
       delete this.stacks[prefix + key];
+
+      this.keys.splice(this.keys.indexOf(key), 1);
     }
   },
 
@@ -63,6 +69,23 @@ Locker.prototype = {
    */
   empty: function () {
     this.stacks = {};
+    this.keys = [];
+  },
+
+  /**
+   * 物品数量
+   * @method length
+   */
+  length: function () {
+    return this.keys.length;
+  },
+
+  first: function () {
+    return this.get(this.keys[0]);
+  },
+
+  last: function () {
+    return this.get(this.keys[this.length() - 1]);
   }
 
 };
