@@ -39,14 +39,19 @@ Locker.prototype = {
   /**
    * 将对象存入储物柜
    * @param {string} key 对象key
-   * @param {object} object 对象
+   * @param {object} obj 对象
+   * @param {number} [index] 插入的位置
    * @method set
    */
-  set: function (key, obj) {
+  set: function (key, obj, index) {
     this.stacks[prefix + key] = obj;
 
     if (this.keys.indexOf(key) === -1) {
-      this.keys.push(key);
+      if (typeof index !== 'undefined') {
+       this.keys.splice(index, 0, key);
+      } else {
+       this.keys.push(key);
+      }
     }
   },
 
