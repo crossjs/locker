@@ -24,6 +24,7 @@ Locker.prototype = {
    * 从储物柜中取得指定对象，参数key未指定则返回全部
    * @param {mix} [key] 对象key
    * @method get
+   * @return {mixed} 返回key对应的对象，key未指定则返回全部，有指定但未找到则返回null
    */
   get: function (key) {
     if (typeof key !== 'undefined') {
@@ -80,15 +81,26 @@ Locker.prototype = {
   /**
    * 物品数量
    * @method length
+   * @return {Number} 返回物品数量
    */
   length: function () {
     return this.keys.length;
   },
 
+  /**
+   * 第一个物品
+   * @method first
+   * @return {mixed} 返回第一个物品
+   */
   first: function () {
     return this.get(this.keys[0]);
   },
 
+  /**
+   * 最后一个物品
+   * @method last
+   * @return {mixed} 返回最后一个物品
+   */
   last: function () {
     return this.get(this.keys[this.length() - 1]);
   }
