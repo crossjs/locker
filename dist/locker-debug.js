@@ -6,6 +6,24 @@ define("pandora/locker/1.0.0/locker-debug", [], function(require, exports, modul
     "use strict";
     var prefix = "LKR-";
     /**
+ * 兼容IE8及以下不支持Array的indexOf方法
+ * @param  {Array} array 数组
+ * @param  {String|Number} value 值
+ * @return {Number} value在array中的下标，如果没找到返回-1
+ */
+    function indexOfArray(array, value) {
+        var index = -1, length = array.length;
+        if (array.indexOf) {
+            return array.indexOf(value);
+        }
+        while (length--) {
+            if (array[length] === value) {
+                return length;
+            }
+        }
+        return index;
+    }
+    /**
  * 储物柜
  * @class Locker
  * @constructor
@@ -39,7 +57,7 @@ define("pandora/locker/1.0.0/locker-debug", [], function(require, exports, modul
    */
         set: function(key, obj, index) {
             this.stacks[prefix + key] = obj;
-            if (this.indexOfArray(this.keys, key) === -1) {
+            if (indexOfArray(this.keys, key) === -1) {
                 if (typeof index !== "undefined") {
                     this.keys.splice(index, 0, key);
                 } else {
@@ -55,7 +73,7 @@ define("pandora/locker/1.0.0/locker-debug", [], function(require, exports, modul
         remove: function(key) {
             if (key !== "") {
                 delete this.stacks[prefix + key];
-                this.keys.splice(this.indexOfArray(this.keys, key), 1);
+                this.keys.splice(indexOfArray(this.keys, key), 1);
             }
         },
         /**
@@ -89,24 +107,6 @@ define("pandora/locker/1.0.0/locker-debug", [], function(require, exports, modul
    */
         last: function() {
             return this.get(this.keys[this.length() - 1]);
-        },
-        /**
-   * 兼容IE8及以下不支持Array的indexOf方法
-   * @param  {Array} array 数组
-   * @param  {String|Number} value 值
-   * @return {Number} value在array中的下标，如果没找到返回-1
-   */
-        indexOfArray: function(array, value) {
-            var index = -1, length = array.length;
-            if (array.indexOf) {
-                return array.indexOf(value);
-            }
-            while (length--) {
-                if (array[length] === value) {
-                    return length;
-                }
-            }
-            return index;
         }
     };
     return Locker;
