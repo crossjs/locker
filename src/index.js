@@ -1,4 +1,3 @@
-define(function (require, exports, module) {
 
 /**
  * 储物柜
@@ -126,6 +125,4 @@ Locker.prototype = {
   }
 };
 
-return Locker;
-
-});
+module.exports = Locker;
